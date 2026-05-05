@@ -1,0 +1,41 @@
+{
+  "name": "health-rca-toolkit",
+  "version": "0.1.0",
+  "description": "Health, life, and retail production alert and Jira root-cause debugging skills.",
+  "author": {
+    "name": "Shivam Yadav",
+    "email": "shivam.yadav@example.com",
+    "url": "https://example.com"
+  },
+  "homepage": "https://example.com/health-rca-toolkit",
+  "repository": "https://example.com/health-rca-toolkit",
+  "license": "UNLICENSED",
+  "keywords": [
+    "health",
+    "rca",
+    "datadog",
+    "jira"
+  ],
+  "skills": "./skills/",
+  "interface": {
+    "displayName": "Health RCA Toolkit",
+    "shortDescription": "Debug health alerts and Jira incidents with evidence-backed RCA workflows.",
+    "longDescription": "A local plugin that packages alert RCA and Jira health root-cause workflows for Datadog, Slack, Jira, service-map, and repository investigations.",
+    "developerName": "Shivam Yadav",
+    "category": "Productivity",
+    "capabilities": [
+      "Debugging",
+      "Incident response",
+      "Root cause analysis"
+    ],
+    "websiteURL": "https://example.com/health-rca-toolkit",
+    "privacyPolicyURL": "https://example.com/privacy",
+    "termsOfServiceURL": "https://example.com/terms",
+    "defaultPrompt": [
+      "Investigate the latest health alert and give me the RCA.",
+      "Debug this health Jira issue from proposal to root cause.",
+      "Find top errors for this service and map downstream impact."
+    ],
+    "brandColor": "#2563EB"
+  }
+}

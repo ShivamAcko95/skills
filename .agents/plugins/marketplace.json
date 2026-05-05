@@ -1,0 +1,20 @@
+{
+  "name": "local-health-rca",
+  "interface": {
+    "displayName": "Local Health RCA"
+  },
+  "plugins": [
+    {
+      "name": "health-rca-toolkit",
+      "source": {
+        "source": "local",
+        "path": "./plugins/health-rca-toolkit"
+      },
+      "policy": {
+        "installation": "AVAILABLE",
+        "authentication": "ON_INSTALL"
+      },
+      "category": "Productivity"
+    }
+  ]
+}

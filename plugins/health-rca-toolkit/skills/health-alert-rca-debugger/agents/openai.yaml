@@ -1,0 +1,4 @@
+interface:
+  display_name: "Health Alert RCA Debugger"
+  short_description: "Deep-dive Datadog alerts into service maps, code root cause, impact, fixes, and confidence."
+  default_prompt: "Deep dive the latest alert, map the downstream services, identify code-level root cause, assess impact, and suggest fixes with confidence percentage."

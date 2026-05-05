@@ -1,0 +1,4 @@
+interface:
+  display_name: "Jira Health Root Cause"
+  short_description: "Debug health Jira root causes"
+  default_prompt: "Use $jira-health-root-cause to investigate this health/life Jira issue end to end, trace proposal/entity/eligibility/payment evidence, and report the root cause."
