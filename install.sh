@@ -6,6 +6,7 @@ SCRIPT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
 SOURCE_PLUGIN_DIR="${SCRIPT_DIR}/plugins/${PLUGIN_NAME}"
 TARGET_PLUGIN_ROOT="${CODEX_PLUGIN_DIR:-${HOME}/.codex/plugins}"
 TARGET_PLUGIN_DIR="${TARGET_PLUGIN_ROOT}/${PLUGIN_NAME}"
+TARGET_SKILLS_ROOT="${CODEX_SKILLS_DIR:-${HOME}/.codex/skills}"
 MARKETPLACE_PATH="${CODEX_MARKETPLACE_PATH:-${HOME}/.agents/plugins/marketplace.json}"
 
 if [[ ! -f "${SOURCE_PLUGIN_DIR}/.codex-plugin/plugin.json" ]]; then
@@ -17,6 +18,14 @@ fi
 mkdir -p "${TARGET_PLUGIN_ROOT}"
 rm -rf "${TARGET_PLUGIN_DIR}"
 cp -R "${SOURCE_PLUGIN_DIR}" "${TARGET_PLUGIN_DIR}"
+
+mkdir -p "${TARGET_SKILLS_ROOT}"
+for skill_dir in "${SOURCE_PLUGIN_DIR}"/skills/*; do
+  [[ -d "${skill_dir}" ]] || continue
+  skill_name="$(basename "${skill_dir}")"
+  rm -rf "${TARGET_SKILLS_ROOT}/${skill_name}"
+  cp -R "${skill_dir}" "${TARGET_SKILLS_ROOT}/${skill_name}"
+done
 
 mkdir -p "$(dirname "${MARKETPLACE_PATH}")"
 
@@ -66,5 +75,6 @@ with marketplace_path.open("w") as handle:
 PY
 
 echo "Installed ${PLUGIN_NAME} to ${TARGET_PLUGIN_DIR}"
+echo "Installed skills to ${TARGET_SKILLS_ROOT}"
 echo "Updated marketplace at ${MARKETPLACE_PATH}"
-echo "Restart Codex if the plugin does not appear immediately."
+echo "Restart Codex if the plugin or skills do not appear immediately."

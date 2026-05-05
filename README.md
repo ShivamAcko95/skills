@@ -19,13 +19,20 @@ The installer copies the plugin to:
 ~/.codex/plugins/health-rca-toolkit
 ```
 
+It also installs both skills directly into Codex skills:
+
+```text
+~/.codex/skills/health-alert-rca-debugger
+~/.codex/skills/jira-health-root-cause
+```
+
 It also creates or updates:
 
 ```text
 ~/.agents/plugins/marketplace.json
 ```
 
-Restart Codex if the plugin does not appear immediately in the marketplace.
+Restart Codex if the plugin or skills do not appear immediately.
 
 ## Custom Paths
 
@@ -33,6 +40,7 @@ You can override the install locations:
 
 ```bash
 CODEX_PLUGIN_DIR=/path/to/plugins \
+CODEX_SKILLS_DIR=/path/to/skills \
 CODEX_MARKETPLACE_PATH=/path/to/marketplace.json \
 ./install.sh
 ```
